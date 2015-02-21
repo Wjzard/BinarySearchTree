@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <BinaryTreeHeader.h>
+#include "BinaryTreeHeader.h"
 
 
 void main() {
-int size = 0;
+	int size = 0;
 
 
 
