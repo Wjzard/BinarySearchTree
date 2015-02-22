@@ -33,6 +33,23 @@ void add(node **tree, int value) {
 	}		
 }
 
+
+void preOrder(node *tree) {
+	printf("%d ", tree->data);
+	preOrder(tree->left);
+	preOrder(tree->right);
+}
+void postOrder(node *tree) {
+	preOrder(tree->left);
+	preOrder(tree->right);
+	printf("%d ", tree->data);
+}
+void inOrder(node *tree) {
+	preOrder(tree->left);
+	printf("%d ", tree->data);
+	preOrder(tree->right);
+}
+
 //for InOrder,PreOrder,PostOrder. Output into array and display array
 /***List of Methods, no idea which should contain arguements/return stuff***\
 remove(char a)
