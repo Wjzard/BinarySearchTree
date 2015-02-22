@@ -11,8 +11,19 @@ struct Binarytree {
 	int data; //eventually change to a character.
 };
 typedef struct Binarytree node;
+int size;
 
+int isLeaf(node *tree) {
+	if(tree->left == NULL && tree->right == NULL) {
+		return 1;
+	} else {
+		return 0;
+	}
+}	
 
+int getSize() {
+	return size;
+}
 
 void add(node **tree, int value) {
 	node *head = NULL;
@@ -23,6 +34,8 @@ void add(node **tree, int value) {
 		head->data = value;
 		head->left = NULL;
 		head->right = NULL;
+		
+		return;
 	}
 	
 	if(value < (*tree)->data) {

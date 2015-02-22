@@ -9,6 +9,10 @@ int main() {
 	for(i=0;i<10;i++) {
 		add(&head,array[i]);
 	}
+	
+	//preOrder(head);
+	//postOrder(head);
+	//inOrder(head);
 
 
 return 0;
