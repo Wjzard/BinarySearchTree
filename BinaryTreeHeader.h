@@ -1,82 +1,37 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
-struct node {
-	struct node left*;
-	struct node right*;
-	char value;
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-int isLeaf(struct node *head) {
-	if(head->left == NULL && head->right == NULL) {
-		return 1;
-	} else {
-		return 0;
-	}
-}
+struct Binarytree {
+	struct Binarytree *left;
+	struct Binarytree *right;
+	int data; //eventually change to a character.
+};
+typedef struct Binarytree node;
 
-void add(struct node *head, char value) {
+
+
+void add(node **tree, int value) {
+	node *head = NULL;
 	
-	if(head == NULL) {
-		head = malloc(sizeof(struct node));
-		head->value = value;
-	}
-	
-	if(value < head->value) {
-		add(head->left, value);
-	}
-	if(value > head->value) {
-		add(head->right, value);
+	if(*tree == NULL) {
+		head = (node *)malloc(sizeof(node));
+		
+		head->data = value;
+		head->left = NULL;
+		head->right = NULL;
 	}
 	
-printf("Succesfully added %c to the tree. \n", value);
-size++;
+	if(value < (*tree)->data) {
+		add(&(*tree)->left, value);
+	}
+	if(value > (*tree)->data) {
+		add(&(*tree)->right, value);
+	}		
 }
-void addHelper(char value) {
-	//add(the main root, value);    ?
-}
-
-int contains(char value) { //recursively search much like the add method.
-
-return 0;
-}
-
-int size() {
-	return size;
-}
-
-void inOrder(struct node *head) {
-	inOrder(head->left);
-	printf("%c ", head->value);
-	inOrder(head->right);
-}
-void preOrder(struct node *head) {
-	printf("%c ", head->value);
-	preOrder(head->left);
-	preOrder(head->right);
-}
-void postOrder(struct node *head) {
-	preOrder(head->left);
-	preOrder(head->right);	
-	printf("%c ", head->value);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //for InOrder,PreOrder,PostOrder. Output into array and display array
 /***List of Methods, no idea which should contain arguements/return stuff***\
