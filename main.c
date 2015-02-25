@@ -2,7 +2,8 @@
 
 int main() {
 	//int size = 0;
-	node *head = malloc(sizeof(node));
+	node *root;
+	root = NULL;
 	int array[] = {7,3,1,9,2,5,0,4,8,6};
 	
 	int i;
