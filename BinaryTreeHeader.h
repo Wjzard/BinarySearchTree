@@ -38,11 +38,11 @@ void add(node **tree, int value) {
 	if(*tree == NULL) {
 		head = (node *)malloc(sizeof(node));
 		
-		head->data = value;
 		head->left = NULL;
 		head->right = NULL;
+		head->data = value;
 		
-		return;
+		//return;
 	}
 	
 	if(value < (*tree)->data) {
@@ -51,6 +51,8 @@ void add(node **tree, int value) {
 	if(value > (*tree)->data) {
 		add(&(*tree)->right, value);
 	}		
+	
+	printf("Added %d. \n", value);
 }
 
 
