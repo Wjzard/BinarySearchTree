@@ -21,6 +21,13 @@ int isLeaf(node *tree) {
 	}
 }	
 
+int getLeft(node *head) {
+	return head->left;
+}
+int getRight(node *head) {
+	return head->right;
+}
+
 int getSize() {
 	return size;
 }
