@@ -33,7 +33,8 @@ int getSize() {
 }
 
 void add(node **tree, int value) {
-	node *head = NULL;
+	node *head = (node *)malloc(sizeof(node));
+	head = NULL;
 	
 	if(*tree == NULL) {
 		head = (node *)malloc(sizeof(node));
